@@ -1,7 +1,7 @@
 #!/bin/bash
 printUsage () {
     echo "Simple script to generate the contents of the \"u2f_mappings\" file."
-    echo "This script automates the use of the pamu2fcfg tool. For this reason, you want the lastest version of pamu2fcfg, I wrote this script using pamu2fcfg version 1.2.1"
+    echo "This script automates the use of the pamu2fcfg tool. For this reason, you want the latest version of pamu2fcfg, I wrote this script using pamu2fcfg version 1.2.1"
     echo "Usage:"
     echo "   $0 <username>"
     echo "   $0 <username> <hostname>"
@@ -11,7 +11,7 @@ printUsage () {
     echo "   $0 $USER $HOSTNAME $HOSTNAME EDDSA $PWD/u2f_mappings"
     echo "Algorithms:"
     echo "   EDDSA - EDDSA authentication using Curve25519 keys - you should usually prefer this one"
-    echo "   ES256 - ECDSA authentication using curve P-256 keys (NIST curve)"
+    echo "   ES256 - ECDSA authentication using Curve P-256 keys (NIST curve)"
     #echo "   RS256 - RSA based authentication"
     echo "Note that the origin and appid strings are part of the U2F standard, in most cases you can and should set them both to your system's hostname ($HOSTNAME)."
     exit
