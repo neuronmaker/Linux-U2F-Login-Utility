@@ -52,7 +52,7 @@ echo "        Not all U2F devices can use all algorithms."
 
 while [[ $response != "done" ]] && [[ $response != "abort" ]]; do
     echo "Total keys to enroll: $totalkeys"
-    echo "Connect only to U2F device you want to enroll, and press enter."
+    echo "Connect only the U2F device you want to enroll, and press enter."
     read response
     if [[ $response = "algo" ]] || [[ $response = "algorithm" ]]; then 
         echo "Changing algorithm to:"

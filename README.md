@@ -22,4 +22,7 @@ installed to wherever your specific system is set up to look for it. Typically,
 the preferred way is to move the output file to ```/etc/u2f_mappings``` and set
 the permissions so that only the ```root``` user can edit or view the file.
 
+You can set the permissions on the mappings file with the command
+`sudo chmod 600 /etc/u2f_mappings`
+
 
