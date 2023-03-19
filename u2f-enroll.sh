@@ -2,6 +2,7 @@
 printUsage () {
     echo "Simple script to generate the contents of the \"u2f_mappings\" file."
     echo "This script automates the use of the pamu2fcfg tool. For this reason, you want the latest version of pamu2fcfg, I wrote this script using pamu2fcfg version 1.2.1"
+    echo "If you are using an older version of panu2fcfg, try adding they yubico-stable repository and updating the libpam-u2f package."
     echo "Usage:"
     echo "   $0 <username>"
     echo "   $0 <username> <hostname>"
