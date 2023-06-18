@@ -13,7 +13,7 @@ printUsage () {
     echo "Algorithms:"
     echo "   EDDSA - EDDSA authentication using Curve25519 keys - you should usually prefer this one"
     echo "   ES256 - ECDSA authentication using Curve P-256 keys (NIST curve)"
-    #echo "   RS256 - RSA based authentication"
+    echo "   RS256 - RSA based authentication"
     echo "Note that the origin and appid strings are part of the U2F standard, in most cases you can and should set them both to your system's hostname ($HOSTNAME)."
     exit
 }
@@ -66,7 +66,7 @@ while [[ $response != "done" ]] && [[ $response != "abort" ]]; do
         read algo
         if [[ $algo = "" ]]; then
             algo="EDDSA"
-            echo "Defaulting to EDDSA since nothing was provided."
+            echo "Defaulting to EDDSA algorithm since nothing was provided."
         fi
     elif [[ $response = "" ]]; then
         thiskey=$( pamu2fcfg -u$user -ipam://$appid -opam://$origin --type=$algo -n )
@@ -78,7 +78,9 @@ while [[ $response != "done" ]] && [[ $response != "abort" ]]; do
             echo "Try changing algorithms for this U2F device if issues persist."
         fi
     else
-     echo "Unknown option"
+       if [[ $response != "done" ]] && [[ $response != "abort" ]]; then #stops this from being printed on exit
+         echo "Unknown option"
+       else 
     fi
 done
 

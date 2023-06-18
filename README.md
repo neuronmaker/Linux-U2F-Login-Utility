@@ -37,4 +37,10 @@ On Ubuntu systems you might be able to get away by using the command:
 
 And then allowing `apt` to upgrade libpam-u2f to the latest version
 
-`sudo apt upgrade`
+`sudo apt-get upgrade`
+
+And if you have not already, install the PAM module
+
+`sudo apt-get install libpam-u2f`
+
+The above command also installs `pamu2fcfg` alongside `libpam-u2f`.
