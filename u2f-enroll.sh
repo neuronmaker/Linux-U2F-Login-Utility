@@ -75,12 +75,12 @@ while [[ $response != "done" ]] && [[ $response != "abort" ]]; do
             contents="$contents$thiskey" #append current key to the total key string
         else
             echo "Something went wrong and pamu2fcfg did not give us an entry."
-            echo "Try changing algorithms for this U2F device if issues persist."
+            echo "Try changing algorithms for this U2F device if issues persists."
         fi
     else
-       if [[ $response != "done" ]] && [[ $response != "abort" ]]; then #stops this from being printed on exit
+       if [[ $response != "done" ]] && [[ $response != "abort" ]]; then #stops this from being printed on exit, only printed when there is an unknown option and we are still in the loop
          echo "Unknown option"
-       else 
+       fi
     fi
 done
 
