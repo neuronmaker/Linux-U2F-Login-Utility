@@ -12,7 +12,7 @@ printUsage () {
     echo "   $0 $USER $HOSTNAME $HOSTNAME EDDSA $PWD/u2f_mappings"
     echo "Algorithms:"
     echo "   EDDSA - EDDSA authentication using Curve25519 keys - you should usually prefer this one"
-    echo "   ES256 - ECDSA authentication using Curve P-256 keys (NIST curve)"
+    echo "   ES256 - ECDSA authentication using NIST P-256 keys"
     echo "   RS256 - RSA based authentication"
     echo "Note that the origin and appid strings are part of the U2F standard, in most cases you can and should set them both to your system's hostname ($HOSTNAME)."
     exit
@@ -78,7 +78,7 @@ while [[ $response != "done" ]] && [[ $response != "abort" ]]; do
             echo "Try changing algorithms for this U2F device if issues persists."
         fi
     else
-       if [[ $response != "done" ]] && [[ $response != "abort" ]]; then #stops this from being printed on exit, only printed when there is an unknown option and we are still in the loop
+       if [[ $response != "done" ]] && [[ $response != "abort" ]]; then #stops this from being printed on exit, only print when there is an unknown option and we are still in the loop
          echo "Unknown option"
        fi
     fi
